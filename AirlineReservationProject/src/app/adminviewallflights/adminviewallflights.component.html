@@ -1,0 +1,70 @@
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+</head>
+
+<header>
+    <nav>
+        <div class="row">
+            <a [routerLink]="['/adminDashboardPage']"><img src="/assets/img/admin.JPG" alt="Admin Logo" class="logo"></a>
+            <ul class="main-nav">
+                <li><a [routerLink]="['/addFlightsPage']">Add Flights</a></li>
+                <li><a [routerLink]="['/updateFlightsPage']">Update Flights</a></li>
+                <li><a [routerLink]="['/viewAllFlightsPage']">View All Flights</a></li>
+                <li><a [routerLink]="['/adminViewBookingPage']">Bookings</a></li>
+                <li><a [routerLink]="['/viewAllUsersPage']">Users</a></li>
+                <li><a [routerLink]="['/homePage']">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<br>
+<br>
+<br>
+
+<section class="section-form">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="row">
+                <div class="main">
+                    <div class="card">
+                        <h2 style="text-align: center;">View All Flight Details..</h2>
+                            <table border="2">
+                                <th>Flight Number</th>
+                                <th>Source</th>
+                                <th>Destination</th>
+                                <th>Departure Time</th>
+                                <th>Arrival Time</th>
+                                
+                                <th>Ticket Price</th>
+                                <th>Capacity</th>
+                                <th>Actions</th>
+                                <tr *ngFor="let flight of flights">
+                                    <td>{{flight.flight_no}}</td>
+                                    <td>{{flight.fromCity}}</td>
+                                    <td>{{flight.toCity}}</td>
+                                    <td>{{flight.depTime}}</td>
+                                    <td>{{flight.arrTime}}</td>
+                                    
+                                    <td>{{flight.ticketPrice}}</td>
+                                    <td>{{flight.capacity}}</td>
+                                    <td>
+                                        <a class="edit" routerLink='updateFlightsPage' title="Edit" data-toggle="tooltip"><i class="material-icons" style="color: #FFC107;">&#xE254;</i></a>
+                                        <a class="delete" href="javascript:void(0);" (click)="deleteFlight(flight.flight_no)" title="Delete" data-toggle="tooltip"><i class="material-icons" style="color: red;">&#xE872;</i></a>
+                                        <router-outlet></router-outlet>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+

@@ -1,0 +1,356 @@
+<head>        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+
+    <title>SKVM Flights</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div>
+                <img src="/assets/img/1logo-white.png" alt="omnifood logo" class="logo">
+                <ul class="main-nav" >
+                    <li><a [routerLink]="['/homePage']">Home</a></li>
+                    <li><a [routerLink]="['/aboutUsPage']">About Us</a></li>
+                    <li><a [routerLink]="['/searchFlightsPage']">Flights</a></li>
+                    <li><a [routerLink]="['/registerPage']">Register</a></li>
+                    <li><a [routerLink]="['/loginPage']">Login</a></li>
+                    <li><a [routerLink]="['/contactUsPage']">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div style="text-align: center;">
+            <br>
+            <br>
+            <br>
+            <br>
+            <h1>Love at first flight.<br>Cheapest flights in India.</h1>
+            <!-- <h2 style="color: whitesmoke; float: left;">Airplane mode: ON.</h2> -->
+            <br>
+            <br>
+            <a class="btn btn-full" [routerLink]="['/searchFlightsPage']">Search Flights</a>
+            <a class="btn btn-ghost" [routerLink]="['/aboutUsPage']">Show me more</a>
+        </div>
+    </header>
+ 
+
+    <!---Welcome/about section-->
+<section class="about-section mt-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 text-center heading-section mb-5">
+                <h2 class="text-black mb-2">Find a perfect deal for next Trip </h2>
+                <p style="text-align: justify;">Simplifly KeMpt Valiant, formerly known as SKVM, headquartered in Mumbai, it operated domestic flights from seven base airports using a fleet of Airbus A320, ATR 42 and ATR 72 aircraft. The airline appealed to middle class travellers with low fares and a large route network. It employed several innovative methods to ensure the profitability of its business model.At the time it ceased operations, SKVM flew to 52 destinations across India. It had bases at seven Indian cities: Ahmedabad, Bengaluru, Chennai, Delhi, Hyderabad, Kolkata, Mumbai. The airline opened a base at Thiruvananthapuram in April 2017; however, and currently serving all across India.</p>
+            </div>
+        </div>
+        <div class="row img-wrap mb-5 mb-lg-0">
+            <div class="col-12">
+                <div class="row">
+                    <div class="mb-4 margin-lg-0 col-lg-6 order-lg-2">
+                        <a href="https://en.wikipedia.org/wiki/Air_travel" class="effect">
+                            <img src="/assets/img/1.jpg"alt=""
+                            class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-lg-5 mr-auto text-lg-right align-self-center order-lg-1">
+                        <h2 class="text-black">The Flights</h2>
+                        <p class="mb-4">
+                          SKVM operated a fleet of ATR 42, ATR 72 and Airbus A320 aircraft. For routes of higher demand between major cities, SKVM used its larger Airbus A320s.
+                        </p>
+                        <a href="https://en.wikipedia.org/wiki/Air_travel"class="btn btn-about">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!------->
+        <div class="row img-wrap mb-5 mb-lg-0">
+            <div class="col-12">
+                <div class="row">
+                    <div class="mb-4 margin-lg-0 col-lg-6">
+                        <a href="https://en.wikipedia.org/wiki/Flight_attendant" class="effect">
+                            <img src="/assets/img/7.jpg"alt=""
+                            class="img-fluid" >
+                        </a>
+                    </div>
+                    <div class="col-lg-5 ml-auto align-self-center order-lg-1">
+                        <h2 class="text-black">Cabin Crew</h2>
+                        <p class="mb-4">
+                          Prior to each flight, flight attendants attend a safety briefing with the pilots and lead flight attendant. During this briefing, they go over safety and emergency checklists, the locations and amounts of emergency equipment and other features specific to that aircraft type.
+                        </p>
+                        <a href="https://en.wikipedia.org/wiki/Flight_attendant"class="btn btn-about">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!------->
+        <div class="row img-wrap mb-5 mb-lg-0">
+            <div class="col-12">
+                <div class="row">
+                    <div class="mb-4 margin-lg-0 col-lg-6 order-lg-2">
+                        <a href="#" class="effect">
+                            <img src="/assets/img/lisbon-3.jpg"alt=""
+                            class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-lg-5 mr-auto text-lg-right align-self-center order-lg-1">
+                        <h2 class="text-black">Destinations</h2>
+                        <p class="mb-4">
+                          The airline operates to 103 destinations with having interciy flights to about 45 cities and domestic flights to 58 cities.
+                        </p>
+                        <a href="https://en.wikipedia.org/wiki/Category:Lists_of_airline_destinations"class="btn btn-about">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!------->
+    </div>
+  </section>
+  <!------------->
+
+<!---Popular Places-->
+<section>
+      <div class="popular section-bg img-effect mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+        <div class="section-title text-center">                      
+          <h1 class="text-white">Popular Places </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ End of Popular Places-->
+    <!-- Other Popular  -->
+    <div class="all-image">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-5 col-md-5">
+                    <div class="single-img">
+                        <div class="img-thumb">
+                            <img src="/assets/images/gateway-of-india.jpg" alt="">
+                        </div>
+                        <div class="img-hover">
+                            <div class="title">
+                                    <h3>Mumbai</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-md-7">
+                    <div class="single-img">
+                        <div class="img-thumb">
+                            <img src="/assets/images/jaipur.jpg" alt="">
+                        </div>
+                        
+                        <div class="img-hover">
+                            <div class="title">
+                                    <h3>Jaipur</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-lg-4">
+                    <div class="single-img radial">
+                        <div class="img-thumb">
+                            <img src="/assets/images/kerala.jpg" alt="">
+                        </div>
+                       <div class="img-hover">
+                        <div class="title">
+                        <h3>Kerala</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-lg-4">
+                    <div class="single-img radial">
+                        <div class="img-thumb">
+                            <img src="/assets/images/Kolkata.jpg" alt="">
+                        </div>
+                         <div class="img-hover">
+                            <div class="title">
+                                    <h3>Kolkata</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-12 col-lg-4">
+                    <div class="single-img radial">
+                        <div class="img-thumb">
+                            <img src="/assets/images/tajmahal.jpg" alt="">
+                        </div>
+                     <div class="img-hover">
+                            <div class="title">
+                                    <h3>Delhi</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+              </div>
+    </div>
+  
+    </section>
+<!--end of Popular Places-->
+
+<!---services Section-->
+<section id="services" class="services section-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="section-title">
+                    <h2>Services We Provide</h2>
+                    <p>
+                        SKVM is a company that provides air transport services for travelling passengers and flights. We utilize aircraft to supply these services and may form partnerships or alliances with other airlines for codeshare agreements, in which they both offer and operate the same flight.
+                    </p>
+                </div>
+            </div>
+            <!----->
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-md-6 d-flex align-items-stretch">
+                        <div class="icon-circle purple">
+                            <div class="icon">
+                                <i class="fa fa-cutlery"></i>
+                            </div>
+                            <h4 class="text-white">Good Food</h4>
+                            <p>Dear diet, things just aren’t looking good for the both of us. It’s not me, it’s you. You’re too much work. You’re boring and I can’t stop cheating on you.</p>
+                        </div>
+                    </div>
+                    <!---->
+                    <div class="col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+                        <div class="icon-circle pink">
+                            <div class="icon">
+                                <i class="fa fa-tv"></i>
+                            </div>
+                            <h4 class="text-white">Unlimited Entertainment</h4>
+                            <p>We provide from listening to music of all genres to watching your favorite series and movies.</p>
+                        </div>
+                    </div>
+                    <!---->
+                    <div class="col-md-6 d-flex align-items-stretch mt-4">
+                        <div class="icon-circle yellow">
+                            <div class="icon">
+                                <i class="fa fa-wifi "></i>
+                            </div>
+                            <h4 class="text-white">Free WI-FI</h4>
+                            <p>Who said keeping phone on aeroplane mode does not give access to WIFI. Here we allow you to access teh WIFI for non stop entertainment.</p>
+                        </div>
+                    </div>
+                    <!---->
+                    <div class="col-md-6 d-flex align-items-stretch mt-4">
+                        <div class="icon-circle blue">
+                            <div class="icon">
+                                <i class="fa fa-shopping-bag"></i>
+                            </div>
+                            <h4 class="text-white">Checked Baggages</h4>
+                            <p>Your Baggages will be taken care by us in a handled and safe way.</p>
+                        </div>
+                    </div>
+                    <!---->
+    
+    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!---End of Services Section-->
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+<section class="section-form">
+    <div style="text-align: center;">
+        <h2>We're happy to hear from you</h2>
+    </div>
+    <br>
+    <br>
+    <br>
+    
+    <div >
+        <form #feedbackForm="ngForm" (ngSubmit)="sendFeedback(feedbackForm)">
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label for="name">Name</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <input id="name" type="text" name="name" #name='ngModel' placeholder="Name" minlength="3" required [(ngModel)]="feedback.name">
+					<div *ngIf="(name.dirty||name.touched) && name.invalid" style="color: red;border-color: red;">
+						<div *ngIf="name.errors.required">Required Field</div>
+						<div *ngIf="name.errors.minlength">Name must be 3 letters</div>
+						</div>
+                </div>                        
+            </div>
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label for="email">Email</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <input id="email" type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9-]+\.[a-z]{2,4}$" [(ngModel)]="feedback.email" placeholder="Eg. example@email.com" #email='ngModel' required>
+					<div *ngIf="(email.dirty||email.touched) && email.invalid" style="color: red;border-color: red;">
+						<div *ngIf="email.errors.required"> Email is Required</div>
+						<div *ngIf="email.errors.pattern">Invalid Email</div>
+					   </div>
+                </div>                        
+            </div>
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label for="reference">How did you find us?</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <select name="reference" id="reference" #reference='ngModel' [(ngModel)]="feedback.reference">
+                        <option value="friends" selected>Friends</option>
+                        <option value="search">Search engine</option>
+                        <option value="ad">Ads</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>                        
+            </div>
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label>Subscribe Newsletter to access our blogs</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <input type="checkbox" name="subscription" id="subscription" #subscription='ngModel' [(ngModel)]="feedback.subscription" checked> Yes, please
+                </div>                        
+            </div>
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label>Drop us a line</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <textarea id="msg" name="msg" placeholder="Write us a message" #msg='ngModel' required [(ngModel)]="feedback.msg"></textarea>
+					<span class="focus-input100"></span>
+					<div *ngIf="msg.invalid && (msg.dirty||msg.touched)" style="color: red;">
+						<div *ngIf="msg.errors.required">Message is required</div>
+					</div>
+                </div>                        
+            </div>
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label>&nbsp;</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <button type="submit" style="width: 100px; height: 70px;">Send it!</button>
+                </div>                        
+            </div>
+        </form>
+    </div>
+</section>
+
+
+

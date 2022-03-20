@@ -1,0 +1,61 @@
+<div *ngIf="isVisibleUserDashboard">
+    <header>
+        <nav>
+            <div class="row">
+                <img src="/assets/img/1logo-white.png" alt="omnifood logo" class="logo">
+                <ul class="main-nav">
+                    <li><a [routerLink]="['/userDashboardPage']">Dashboard</a></li>
+                    <li><a [routerLink]="['/userProfilePage']">Profile</a></li>
+                    <li><a [routerLink]="['/userSearchFlightsPage']">Flights</a></li>
+                    <li><a [routerLink]="['/userBookingsPage']">Bookings</a></li>
+                    <li><a [routerLink]="['/userCancellationsPage']">Cancellations</a></li>
+                    <li><a [routerLink]="['/homePage']">Logout</a></li>
+                </ul>
+            </div>
+          </nav>
+    </header>   
+</div>
+
+<div *ngIf="isVisibleAdminDashboard">
+    <header>
+        <nav>
+            <div class="row">
+                <a [routerLink]="['/adminDashboardPage']"><img src="/assets/img/admin.JPG" alt="Admin Logo" class="logo"></a>
+                <ul class="main-nav">
+                    <li><a [routerLink]="['/addFlightsPage']">Add Flights</a></li>
+                    <li><a [routerLink]="['/updateFlightsPage']">Update Flights</a></li>
+                    <li><a [routerLink]="['/deleteFlightsPage']">Delete Flights</a></li>
+                    <li><a [routerLink]="['/viewAllFlightsPage']">View All Flights</a></li>
+                    <li><a [routerLink]="['/homePage']">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+</div>
+
+<div *ngIf="isVisibleMainDashboard">
+    <header>
+        <nav>
+            <div class="row">
+                <img src="/assets/img/1logo-white.png" alt="omnifood logo" class="logo">
+                <ul class="main-nav">
+                    <li><a [routerLink]="['/homePage']">Home</a></li>
+                    <li><a [routerLink]="['/aboutUsPage']">About Us</a></li>
+                    <li><a [routerLink]="['/searchFlightsPage']">Flights</a></li>
+                    <li><a [routerLink]="['/registerPage']">Register</a></li>
+                    <li><a [routerLink]="['/loginPage']">Login</a></li>
+                    <li><a [routerLink]="['/contactUsPage']">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <h1>Love at first flight.<br>Cheapest flights in India.</h1>
+            <a class="btn btn-full" [routerLink]="['/searchFlightsPage']">Search Flights</a>
+            <a class="btn btn-ghost" [routerLink]="['/aboutUsPage']">Show me more</a>
+        </div>
+    </header>
+</div>    

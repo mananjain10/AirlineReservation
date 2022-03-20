@@ -1,0 +1,72 @@
+<header>
+	<nav>
+		<div >
+			<img src="/assets/img/1logo-white.png" alt="omnifood logo" class="logo">
+			<ul class="main-nav">
+				<li><a [routerLink]="['/homePage']">Home</a></li>
+				<li><a [routerLink]="['/aboutUsPage']">About Us</a></li>
+				<li><a [routerLink]="['/searchFlightsPage']">Flights</a></li>
+				<li><a [routerLink]="['/registerPage']">Register</a></li>
+				<li><a [routerLink]="['/loginPage']">Login</a></li>
+				<li><a [routerLink]="['/contactUsPage']">Contact Us</a></li>
+			</ul>
+		</div>
+	</nav>
+  </header> 
+<br>
+<br>
+<br>
+<div class="box">
+  <h2>Login</h2>
+  <form #loginForm="ngForm" (ngSubmit)="checkLogin(loginForm)">
+    <label for="email"><b>Email</b></label>
+    <div class="inputBox">
+      <input id="email" type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9-]+\.[a-z]{2,4}$" [(ngModel)]="loginuser.email" placeholder="Eg. example@email.com" #email='ngModel' required>
+      <div *ngIf="(email.dirty||email.touched) && email.invalid" style="color: red;border-color: red;">
+          <div *ngIf="email.errors.required"> Email is Required</div>
+          <div *ngIf="email.errors.pattern">Invalid Email</div>
+      </div>
+    </div>
+
+    <label for="psw"><b>Password</b></label>
+    <div class="inputBox">
+      <input type="password" #pwd='ngModel' pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" placeholder="Enter Password" name="psw" id="psw" required [(ngModel)]="loginuser.password"><br>
+      <div *ngIf="pwd.invalid && (pwd.dirty||pwd.touched)" style="color: red;">
+        <div *ngIf="pwd.errors.required">password is required</div>
+        <div *ngIf="pwd.errors.pattern">password is invalid</div>
+      </div>
+    </div>
+    <!-- <a  [routerLink]="['/userDashboardPage']"><button type="submit">Sign-In</button></a> -->
+    <button type="submit">Sign-In</button>
+    <a [routerLink]="['/homePage']"><button type="submit" style="background-color: red;">Cancel</button></a>
+    <div class="psw"><a [routerLink]="['/forgotPasswordPage']">Forgot password?</a></div>
+  </form>
+</div>
+
+
+
+
+<!-- 
+<form>
+<div class="imgcontainer">
+  <img src="/assets/images/boy-avatar.jpg" alt="Avatar" class="avatar">
+</div>
+
+<div class="container">
+  <label for="uname"><b>Username</b></label>
+  <input type="text" placeholder="Enter Username" name="uname" required>
+
+  <label for="psw"><b>Password</b></label>
+  <input type="password" placeholder="Enter Password" name="psw" required>
+      
+  <button type="submit">Login</button>
+  <label>
+    <input type="checkbox" checked="checked" name="remember"> Remember me
+  </label>
+</div>
+
+<div class="container" style="background-color:#f1f1f1">
+  <button type="button" class="cancelbtn">Cancel</button>
+  <span class="psw">Forgot <a href="#">password?</a></span>
+</div>
+</form> -->

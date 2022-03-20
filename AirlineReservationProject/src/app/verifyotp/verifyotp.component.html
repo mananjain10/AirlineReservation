@@ -1,0 +1,30 @@
+<header>
+    <nav>
+        <div class="row">
+            <img src="/assets/img/1logo-white.png" alt="omnifood logo" class="logo">
+            <ul class="main-nav">
+                <li><a [routerLink]="['/homePage']">Home</a></li>
+                <li><a [routerLink]="['/aboutUsPage']">About Us</a></li>
+                <li><a [routerLink]="['/searchFlightsPage']">Flights</a></li>
+                <li><a [routerLink]="['/registerPage']">Register</a></li>
+                <li><a [routerLink]="['/loginPage']">Login</a></li>
+                <li><a [routerLink]="['/contactUsPage']">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+    </header>
+    <div class="box">
+        <h2>OTP sent Successfully</h2>
+        <form #verifyOtpForm="ngForm" (ngSubmit)="verifyOTP(sentOtp.otp)">
+          <label for="otp"><b>Enter OTP </b></label>
+          <div class="inputBox">
+            <input id="otp" type="text" name="otp" [(ngModel)]="sentOtp.otp" #sentOtp='ngModel' required>
+            {{sentOtp.otp}}
+            <div *ngIf="(sentOtp.otp.dirty||sentOtp.otp.touched)" style="color: red;border-color: red;">
+                <div *ngIf="sentOtp.otp.errors.required">OTP is Required</div>
+            </div>
+          </div>
+          <button type="submit">Verify OTP</button>      
+         
+        </form>
+      </div>

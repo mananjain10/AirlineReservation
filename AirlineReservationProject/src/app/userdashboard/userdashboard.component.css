@@ -1,0 +1,513 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+
+header {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.2))), url(/assets/img/gettyimages-1012124606-612x612.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url(/assets/img/gettyimages-1012124606-612x612.jpg);
+  background-size: cover;
+  background-position: center;
+
+  background-attachment: fixed;
+  
+}
+
+.container {
+  display: flex;
+  
+}
+
+.card-1 {
+  --color: rgb(255, 7, 110);
+  
+--image:url("/assets/img/userdash.png")
+}
+.card-2 {
+  --color: rgb(95, 0, 173);
+  
+  --image:url("/assets/img/userdash1.png")
+ 
+}
+.card-3 {
+  --color: rgb(1, 19, 102);
+  --image:url("/assets/img/userdash2.png");
+}
+.card-4 {
+  --color: rgb(131, 219, 59);
+  --image:url("/assets/img/userdash3.png"); 
+}
+.card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 270px;
+  grid-template-rows: 180px 150px 150px;
+  grid-template-areas: "image" "text" "stats";
+  
+  border-radius: 18px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  text-align: center;
+  width: 270px;
+  transition: 0.5s ease;
+  cursor: pointer;
+  margin: 10px; 
+  border-radius: 18px;
+  /* margin-left: auto;
+  margin-right: auto;
+  margin-top: auto; */
+
+}
+
+.card-image {
+  grid-area: image;
+  background: var(--image);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-size: cover;
+}
+.card-text {
+  grid-area: text;
+  margin: 5px;
+}
+
+.card-text .date {
+  color: var(--color);
+  font-size: 10px;
+  font-weight: bolder;
+}
+
+.card-text p {
+  color: rgb(17, 15, 15);
+  font-size: 13px;
+  font-weight: 300;
+  font-family: cursive;
+}
+.card-text h2 {
+  margin-top: 0;
+  font-size: 22px;
+}
+.card-stats {
+  display: flex;
+  justify-content: space-around;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background: var(--color);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.card-stats .stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  color: white;
+}
+
+.card-stats .type {
+  font-size: 9px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.card-stats .value {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-image: url('/assets/images/userdetails1.JPG');
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.flip-card-back center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: large;
+}
+
+.container {
+  display: flex;
+  /* background-image: url("D:\AirReser\src\assets\img\marco-tjokro-5ChChAtRUk8-unsplash.jpg"); */
+}
+
+
+.card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 270px;
+  grid-template-rows: 180px 150px 150px;
+  grid-template-areas: "image" "text" "stats";
+  
+  border-radius: 18px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  text-align: center;
+  width: 270px;
+  transition: 0.5s ease;
+  cursor: pointer;
+  margin: 10px; 
+  border-radius: 18px;
+  /* margin-left: auto;
+  margin-right: auto;
+  margin-top: auto; */
+
+}
+
+.card-image {
+  grid-area: image;
+  background: var(--image);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-size: cover;
+}
+.card-text {
+  grid-area: text;
+  margin: 5px;
+}
+
+.card-text .date {
+  color: var(--color);
+  font-size: 10px;
+  font-weight: bolder;
+}
+
+.card-text p {
+  color: rgb(17, 15, 15);
+  font-size: 13px;
+  font-weight: 300;
+  font-family: cursive;
+}
+.card-text h2 {
+  margin-top: 0;
+  font-size: 22px;
+}
+.card-stats {
+  display: flex;
+  justify-content: space-around;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background: var(--color);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.card-stats .stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  color: white;
+}
+
+.card-stats .type {
+  font-size: 9px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.card-stats .value {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+}
+
+.quote
+{
+    /* font-family: 'Lato', 'Arial', sans-serif; */
+    font-size: 20px;
+    letter-spacing: 3px;
+    color:black;
+    text-align: center;
+    padding: 50px;
+    font-family: "cursive";
+    
+    
+}
+h2 {
+  -webkit-text-stroke: 1px black;
+}
+
+
+/*common styles !!!YOU DON'T NEED THEM */
+body {
+  /* font-family: "Poppins", sans-serif; */
+  font-weight: 400;
+  font-size: 17px;
+  color: #212121;
+  line-height: 1.4;
+}
+
+.container {
+  width: 1100px;
+  margin: 50px auto 0;
+}
+.container h1 {
+  font-size: 25px;
+  text-align: center;
+}
+.container h1 span {
+  position: relative;
+  font-family: "Merienda", cursive;
+  color: #CA9CE1;
+}
+.container h1 span:after {
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  content: "~";
+  width: 100%;
+  text-align: center;
+}
+.container .subheader {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  width: 800px;
+  margin: 30px auto 0;
+}
+.link a {
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-right: 40px;
+  color: inherit;
+  font-size: inherit;
+  text-decoration: none;
+}
+.link a:hover {
+  color: #CA9CE1;
+}
+.link a:last-child {
+  margin-right: 0;
+}
+.link a i {
+  color: #CA9CE1;
+  margin-right: 9px;
+  font-size: 30px;
+}
+
+.slider-containers {
+  width: 100%;
+  margin-top: 60px;
+}
+
+.slider-container {
+  margin-bottom: 60px;
+}
+.slider-container h2 {
+  text-align: center;
+}
+
+.flexbox-slider {
+  margin-top: 50px;
+}
+
+/*slide styles !!!YOU NEED THEM */
+.flexbox-slider {
+  display: flex;
+  width: 100%;
+  height: 500px;
+  visibility: hidden;
+}
+.flexbox-slider .flexbox-slide {
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+  width: 20%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  visibility: visible;
+}
+.flexbox-slider .flexbox-slide:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  z-index: 2;
+  opacity: 0;
+}
+.flexbox-slider .flexbox-slide img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: auto;
+  width: auto;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.flexbox-slider .flexbox-slide .text-block {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  z-index: 4;
+  visibility: hidden;
+  opacity: 0;
+}
+.flexbox-slider .flexbox-slide .text-block h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+.flexbox-slider:hover .flexbox-slide:hover {
+  flex-shrink: 0;
+  width: 50%;
+}
+
+
+/* effect 2 styles */
+.flexbox-slider.flexbox-slider-2 .flexbox-slide .text-block {
+  left: -60px;
+}
+.flexbox-slider.flexbox-slider-2:hover .flexbox-slide:not(:hover):after {
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+  opacity: 1;
+}
+.flexbox-slider.flexbox-slider-2:hover .flexbox-slide:hover .text-block {
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0, 0, 0, 1.82);
+  transition-delay: 0.5s;
+  left: 30px;
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+/* sliding*/
+ 
+/* I found James Bosworth's codepen the other day (https://codepen.io/bosworthco/) and saw his work on shifted perspective and wanted to learn how to make it.
+I also found this Youtube video (https://www.youtube.com/watch?v=LgiadQQM6mo&list=PLbu98QxRH81KxxMclY_ZRmm4Dac-n7cSA) which is a great tutorial of the project. Enjoy!
+*/
+
+
+
+.perspective-text {
+  color:black;
+  font-family: Arial;
+  font-size: 58px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
+
+.perspective-line {
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+  width: 40%;
+}
+
+p {
+  margin: 0;
+  height: 50px;
+  line-height: 50px;
+  transition: all 0.5s ease-in-out;
+}
+
+
+.perspective-text:hover p {
+  transform: translate(0, -50px);
+}
+
+.perspective-line:nth-child(1) {
+  left: 29px;
+}
+
+.perspective-line:nth-child(2) {
+  left: 20px;
+  background: #f07e6e;
+  
+}
+
+.perspective-line:nth-child(3) {
+  left: 87px;
+  background: #84cdfa;
+}
+
+.perspective-line:nth-child(4) {
+  left: 116px;
+  background: #5ad1cd;
+}
+
+.perspective-line:nth-child(5) {
+  left: 145px;
+}

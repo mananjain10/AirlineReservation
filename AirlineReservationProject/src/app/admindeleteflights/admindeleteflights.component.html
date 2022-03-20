@@ -1,0 +1,33 @@
+
+    <nav>
+        <div class="row">
+            <a [routerLink]="['/adminDashboardPage']"><img src="/assets/img/admin.JPG" alt="Admin Logo" class="logo"></a>
+            <ul class="main-nav">
+                <li><a [routerLink]="['/addFlightsPage']">Add Flights</a></li>
+                <li><a [routerLink]="['/updateFlightsPage']">Update Flights</a></li>
+                <li><a [routerLink]="['/deleteFlightsPage']">Delete Flights</a></li>
+                <li><a [routerLink]="['/viewAllFlightsPage']">View All Flights</a></li>
+                <li><a [routerLink]="['/homePage']">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+<section class="section-form">
+    <div class="row">
+        <div class="main">
+            <div class="card">
+            <h2 style="text-align: center;">Delete Flights..</h2>
+            <form>
+                <div class="container">
+                <label for="fnumber"><b>Flight Number</b></label><br>
+                <input type="number" placeholder="Enter Flight number to delete" name="fnumber" id="fnumber"><br>
+            
+                <br>
+                <button type="submit">Delete Flight</button>
+                </div>
+            </form>
+        </div>
+    </div>    
+
+

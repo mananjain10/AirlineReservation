@@ -1,0 +1,208 @@
+<header>
+  <nav>
+      <div class="row">
+          <img src="/assets/img/1logo-white.png" alt="omnifood logo" class="logo">
+          <ul class="main-nav">
+              <li><a [routerLink]="['/userDashboardPage']">Dashboard</a></li>
+              <li><a [routerLink]="['/userProfilePage']">Profile</a></li>
+              <li><a [routerLink]="['/userSearchFlightsPage']">Flights</a></li>
+              <li><a [routerLink]="['/userBookingsPage']">Bookings</a></li>
+              <li><a [routerLink]="['/userCancellationsPage']">Cancellations</a></li>
+              <li><a [routerLink]="['/userWalletPage']">Wallet</a></li>
+              <li><a [routerLink]="['/homePage']" href="javascript:void(0);" (click)="logout()">Logout</a></li>
+          </ul>
+      </div>
+    </nav>
+</header>
+<div class="quote">
+    <h2 style="color: black;">Hi {{user.firstName}}</h2>
+    <h3>"When once you have tasted flight, you will forever walk the earth with your<br> 
+        eyes turned skyward, for there you have been, and there you will always long to return."</h3>
+</div>
+<div class="perspective-text">
+  <div class="perspective-line">
+    <p></p>
+    <p>Reality</p>
+  </div>
+  <div class="perspective-line">
+    <p>Reality</p>
+    <p>Is Only</p>
+  </div>
+  <div class="perspective-line">
+    <p>Is Only</p>
+    <p>A Matter Of</p>
+  </div>
+  <div class="perspective-line">
+    <p>A Matter Of</p>
+    <p>Perception</p>
+  </div>
+  <div class="perspective-line">
+    <p>Perception</p>
+    <p></p>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+
+<div class="flip-card" style="margin: auto;">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="/assets/images/userdetails.JPG" style="width:400px;height:400px;">
+      <h2>Check Out Your<br>details</h2>
+    </div>
+    <div class="flip-card-back" style="width:400px;height:400px;">
+      <h2 class="center">{{user.firstName}} {{user.lastName}}</h2>
+      <br>
+      <br>
+      <br>
+      <p class="center">{{user.user_id}}</p>
+      <p class="center">{{user.email}} </p>
+      <p class="center">{{user.dob}}</p>
+      <p class="center">{{user.phoneNo}} </p>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+  <!--       1st Card -->
+  <a routerLink='/userProfilePage'><div class="card card-1">
+    <div class="card-image">
+    </div>
+    <div class="card-text">
+      <span class="date"></span>
+      <h2>Profile</h2>
+      <p><b>Welcome {{user.firstName}}!! <br>You are a valuable customer!
+        Check Out Your Awesome Details here!!<br></b></p>
+    </div>
+    <div class="card-stats">
+      <div class="stats">
+        <div class="value"></div>
+        <div class="type"></div>
+      </div>
+     
+    </div>
+  </div></a>
+  <!--          2nd Card (Repeat above)  -->
+  <a routerLink='/searchFlightsPage'><div class="card card-2">
+    <div class="card-image">
+    </div>
+    <div class="card-text">
+      <span class="date"></span>
+      <h2>Flights</h2>
+      <p>Bon Voyage <b>{{user.firstName}}</b>!!<br>
+        Wanna Experience the adrenaline rush?
+      Search for flights here!</p>
+    </div>
+    <div class="card-stats">
+      <div class="stats">
+        <div class="value"></div>
+        <div class="type"></div>
+      </div>
+    </div>
+  </div></a>
+ <a routerLink='/userBookingsPage'> <div class="card card-3">
+    <div class="card-image">
+    </div>
+    <div class="card-text">
+      <span class="date"></span>
+      <h2>Bookings</h2>
+      <p><b>Hey Voyager!Check out your latest flight experience here and<br>
+      Dont Forget To book for a Summer Vacation!!</b></p>
+    </div>
+    <div class="card-stats">
+      <div class="stats">
+        <div class="value"></div>
+        <div class="type"></div>
+      </div>
+    </div>
+  </div></a>
+
+<a routerLink='/userCancellationsPage'> <div class="card card-4">
+  <div class="card-image">
+  </div>
+  <div class="card-text">
+    <span class="date"></span>
+    <h2>Cancellations</h2>
+    <p>Sometimes dropping the existing plan gives you a better plan!<br>
+      Check out your missed trips here!</p>
+  </div>
+  <div class="card-stats">
+    <div class="stats">
+      <div class="value"></div>
+      <div class="type"></div>
+    </div>
+  </div>
+</div></a>
+</div>
+<br>
+
+<div class="slider-container">
+  <div class="flexbox-slider flexbox-slider-2">
+    <div class="flexbox-slide">
+      <img src="/assets/img/photo-1536435427574-ed972b0e8ab9.jpg" alt="Slide Image">
+      <div class="text-block">
+        <h3>Happy Journey</h3>
+        <div class="text">
+          <p> Let your dreams take the Flight. The world is waiting for you, my friend! We hope everyone else gets to see the amazing person that you are. Good luck and safe travels!</p>
+        </div>
+      </div>
+    </div>
+    <div class="flexbox-slide">
+      <img src="/assets/img/photo-1499063078284-f78f7d89616a.jpg" alt="Slide Image">
+      <div class="text-block">
+        <h3>Surreal</h3>
+        <div class="text">
+          <p>The imaginary is what tends to become real. Perfect nonsense goes on in the world. Sometimes there is no plausibility at all.</p>
+        </div>
+      </div>
+    </div>
+    <div class="flexbox-slide">
+      <img src="/assets/img/photo-1615561916422-7014e1078997.jpg" alt="Slide Image">
+      <div class="text-block">
+        <h3>Staffs</h3>
+        <div class="text">
+          <p>A flight attendant, also known as steward/stewardess or air host/air hostess, is a member of the aircrew aboard commercial flights, many business jets and some government aircraft.</p>
+        </div>
+      </div>
+    </div>
+    <div class="flexbox-slide">
+      <img src="/assets/img/gettyimages-1012124606-612x612.jpg" alt="Slide Image">
+      <div class="text-block">
+        <h3>Vacation</h3>
+        <div class="text">
+          <p>It’s better to see something once than to hear about it a thousand times.We travel not to escape life, but for life not to escape us.</p>
+        </div>
+      </div>
+    </div>
+    <div class="flexbox-slide">
+      <img src="/assets/img/photo-1603792835233-f4f7c2497d4f.jpg" alt="Slide Image">
+      <div class="text-block">
+        <h3>Travel</h3>
+        <div class="text">
+          <p>Jobs fill your pockets, adventures fill your soul.Remember that happiness is a way of travel, not a destination.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

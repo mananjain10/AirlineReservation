@@ -1,0 +1,51 @@
+<header>
+    <nav>
+        <div class="row">
+            <a [routerLink]="['/adminDashboardPage']"><img src="/assets/img/admin.JPG" alt="Admin Logo" class="logo"></a>
+            <ul class="main-nav">
+                <li><a [routerLink]="['/addFlightsPage']">Add Flights</a></li>
+                <li><a [routerLink]="['/updateFlightsPage']">Update Flights</a></li>
+                <li><a [routerLink]="['/viewAllFlightsPage']">View All Flights</a></li>
+                <li><a [routerLink]="['/viewAllBookingPage']">Bookings</a></li>
+                <li><a [routerLink]="['/viewAllUsersPage']">Users</a></li>
+                <li><a [routerLink]="['/homePage']">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<br>
+<br>
+<br>
+
+<section class="section-form">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="row">
+                <div class="main">
+                    <div class="card">
+                        <h2 style="text-align: center;">View All Users..</h2>
+                            <table border="2">
+                                <th>User Id</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Date Of Birth</th>
+                                <th>Email</th>
+                                <th>Phone No</th>
+                                <tr *ngFor="let user of users">
+                                    <td>{{user.user_id}}</td>
+                                    <td>{{user.firstName}}</td>
+                                    <td>{{user.lastName}}</td>
+                                    <td>{{user.dob}}</td>
+                                    <td>{{user.email}}</td>
+                                    <td>{{user.phoneNo}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+

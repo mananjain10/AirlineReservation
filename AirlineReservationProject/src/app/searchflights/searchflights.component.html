@@ -1,0 +1,161 @@
+<header>
+	<nav>
+		<div >
+			<img src="/assets/img/1logo-white.png" alt="omnifood logo" class="logo">
+			<ul class="main-nav">
+				<li><a [routerLink]="['/homePage']">Home</a></li>
+				<li><a [routerLink]="['/aboutUsPage']">About Us</a></li>
+				<li><a [routerLink]="['/searchFlightsPage']">Flights</a></li>
+				<li><a [routerLink]="['/registerPage']">Register</a></li>
+				<li><a [routerLink]="['/loginPage']">Login</a></li>
+				<li><a [routerLink]="['/contactUsPage']">Contact Us</a></li>
+			</ul>
+		</div>
+	</nav>
+  </header> 
+  <br> 
+   <br>
+   <br>
+   <div id="booking" class="section">
+	<div class="section-center">
+		<div class="container">
+			<div class="row">
+				<div class="booking-form">
+					<form #searchForm="ngForm" (ngSubmit)="searchPlane(searchForm)">
+						
+						<div class="row">
+							<div class="col-md-5">
+								<div class="form-group">
+									<span class="form-label">Flying from</span>
+									<input class="form-control" type="text" placeholder="City or airport" name="fromCity" id="fromCity" #fromCity=ngModel minlength="3" pattern="/^[A-Za-z]+$/" [(ngModel)]=searchFlight.fromCity required>
+									<div *ngIf="fromCity.invalid && (fromCity.dirty||fromCity.touched)" style="color: red;">
+										<div *ngIf="fromCity.errors.required">source is required</div>
+										<!-- <div *ngIf="fromCity.errors.pattern">source must have only letters</div> -->
+										<div *ngIf="fromCity.errors.minlength">source must have atleast 3 char</div>
+									  </div>
+								</div>
+							</div>
+							<div class="col-md-5">
+								<div>
+									<button type="button" class="switch" (click)="switchInput(searchFlight.fromCity,searchFlight.toCity)"><i class="material-icons" style="color: #FFF;">&#xe8d5;</i></button>
+								</div>
+							</div>
+							<div class="col-md-5">
+								<div class="form-group">
+									<span class="form-label">Flying to</span>
+									<input class="form-control" type="text" placeholder="City or airport" name="toCity" id="toCity" #toCity=ngModel minlength="3" pattern="/^[A-Za-z]+$/" [(ngModel)]=searchFlight.toCity required> 
+									<div *ngIf="toCity.invalid && (toCity.dirty||toCity.touched)" style="color: red;">
+										<div *ngIf="toCity.errors.required">Destination is required</div>
+										<!-- <div *ngIf="toCity.errors.pattern">Destination must have only letters</div> -->
+										<div *ngIf="toCity.errors.minlength">Destination must have atleast 3 char</div>
+									  </div>
+								</div>
+							</div>
+							<div class="col-md-5">
+								<div class="form-group">
+									<span class="form-label">No of Passengers</span>
+									<input class="form-control" type="number" placeholder="1" name="noOfPassengers" id="noOfPassengers"  required #noOfPassengers=ngModel [(ngModel)]=booking.noOfPassengers>
+									<div *ngIf="noOfPassengers.invalid && (noOfPassengers.dirty||noOfPassengers.touched)" style="color: red;">
+										<div *ngIf="noOfPassengers.errors.required">noOfPassengers is required</div>
+									  </div>
+								
+								</div>
+							</div>
+							<div class="col-md-5">
+								<div  class="form-group">
+									<span class="form-label">Departing Date</span>
+									<input class="form-control" type="date" name="dateT" id="dateT" #dateT=ngModel [(ngModel)]=searchFlight.dateT  [min]="minDate" [max]="maxDate" required>
+									<div *ngIf="dateT.invalid && (dateT.dirty||dateT.touched)" style="color: red;">
+										<div *ngIf="dateT.errors.required">Date of Travel is required</div>
+									  </div>
+								</div>
+							</div> 
+							
+							
+							
+						</div>
+						
+							<div class="col-md-5">
+								<div class="form-btn">
+									<button type="submit" class="submit-btn">Show flights</button>
+								</div>
+							</div>
+						
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- <nav>
+	<div class="row">
+		<img src="/assets/img/1logo-white.png" alt="omnifood logo" class="logo">
+		<ul class="main-nav">
+			<li><a [routerLink]="['/userDashboardPage']">Dashboard</a></li>
+			<li><a [routerLink]="['/userProfilePage']">Profile</a></li>
+			<li><a [routerLink]="['/searchFlightsPage']">Flights</a></li>
+			<li><a [routerLink]="['/userBookingsPage']">Bookings</a></li>
+			<li><a [routerLink]="['/userCancellationsPage']">Cancellations</a></li>
+			<li><a [routerLink]="['/homePage']">Logout</a></li>
+		</ul>
+	</div>
+  </nav>
+
+<div id="booking" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="booking-form">
+						<form #searchForm="ngForm" (ngSubmit)="searchPlane()">
+							
+							<div class="row">
+								<div class="col-md-5">
+									<div class="form-group">
+										<span class="form-label">Flying from</span>
+										<input class="form-control" type="text" placeholder="City or airport" name="fromCity" id="fromCity" #fromCity=ngModel [(ngModel)]=searchFlight.fromCity>
+									</div>
+								</div>
+								<div class="col-md-5">
+									<div>
+										<button type="button" class="switch" (click)="switchInput(searchFlight.fromCity,searchFlight.toCity)"><i class="material-icons" style="color: #FFF;">&#xe8d5;</i></button>
+									</div>
+								</div>
+								<div class="col-md-5">
+									<div class="form-group">
+										<span class="form-label">Flying to</span>
+										<input class="form-control" type="text" placeholder="City or airport" name="toCity" id="toCity" #toCity=ngModel [(ngModel)]=searchFlight.toCity>
+									</div>
+								</div>
+								<div class="col-md-5">
+                                    <div class="form-group">
+                                        <span class="form-label">No of Passengers</span>
+                                        <input class="form-control" type="number" placeholder="1" name="noOfPassengers" id="noOfPassengers" #noOfPassengers=ngModel [(ngModel)]=booking.noOfPassengers>
+                                    </div>
+                                </div>
+								<div class="col-md-5">
+									<div  class="form-group">
+										<span class="form-label">Departing</span>
+										<input class="form-control" type="date" name="dateT" id="dateT" #dateT=ngModel [(ngModel)]=searchFlight.dateT  [min]="minDate" [max]="maxDate">
+									</div>
+								</div> 
+								
+								
+                                
+                            </div>
+							
+								<div class="col-md-5">
+									<div class="form-btn">
+										<button type="submit" class="submit-btn">Show flights</button>
+									</div>
+								</div>
+							
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+ -->

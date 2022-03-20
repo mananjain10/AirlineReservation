@@ -1,0 +1,68 @@
+<header>
+    <nav>
+        <div class="row">
+            <img src="/assets/img/1logo-white.png" alt="omnifood logo" class="logo">
+            <ul class="main-nav">
+				        <li><a [routerLink]="['/userDashboardPage']">Dashboard</a></li>
+                <li><a [routerLink]="['/userProfilePage']">Profile</a></li>
+                <li><a [routerLink]="['/userSearchFlightsPage']">Flights</a></li>
+                <li><a [routerLink]="['/userBookingsPage']">Bookings</a></li>
+                <li><a [routerLink]="['/userCancellationsPage']">Cancellations</a></li>
+				<li><a [routerLink]="['/userWalletPage']">Wallet</a></li>
+                <li><a [routerLink]="['/homePage']" href="javascript:void(0);" (click)="logout()">Logout</a></li>
+            </ul>
+        </div>
+      </nav>
+</header>
+
+<br><br>
+<h2 style="text-align: center;">Upcoming Journeys</h2>
+  <table class="styled-table">
+    <thead>
+        <tr class="head">
+            <th>Booking Id</th>
+            <th>Number Of Passengers</th>
+            <th>Book Date</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let booking of bookings">
+            <td><a href="javascript:void(0);" (click)="viewticket(booking.booking_id)">{{booking.booking_id}}</a></td>
+            <td>{{booking.noOfPassengers}}</td>
+            <td>{{booking.bookDate}}</td>
+            
+            <td><button type="button" style="background-color: red;" (click)="cancelticket(booking.booking_id)">Cancel</button></td>
+            
+        </tr>
+        
+        <!-- and so on... -->
+    </tbody>
+  </table>
+
+
+  <br><br>
+  <h2 style="text-align: center;">Travelled</h2>
+  <table class="styled-table">
+    <thead>
+        <tr class="head">
+            <th>Booking Id</th>
+            <th>Number Of Passengers</th>
+            <th>Book Date</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let bookinga of bookings1">
+            <td><a href="javascript:void(0);" (click)="viewticket(bookinga.booking_id)">{{bookinga.booking_id}}</a></td>
+            <td>{{bookinga.noOfPassengers}}</td>
+            <td>{{bookinga.bookDate}}</td>
+            
+            <td>Travelled</td>
+            
+        </tr>
+        
+        <!-- and so on... -->
+    </tbody>
+  </table>
+  

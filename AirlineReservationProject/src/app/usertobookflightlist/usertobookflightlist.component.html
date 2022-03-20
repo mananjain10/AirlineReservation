@@ -1,0 +1,51 @@
+<header>
+    <nav>
+        <div class="row">
+            <img src="/assets/img/1logo-white.png" alt="omnifood logo" class="logo">
+            <ul class="main-nav">
+				<li><a [routerLink]="['/userDashboardPage']">Dashboard</a></li>
+                <li><a [routerLink]="['/userProfilePage']">Profile</a></li>
+                <li><a [routerLink]="['/userSearchFlightsPage']">Flights</a></li>
+                <li><a [routerLink]="['/userBookingsPage']">Bookings</a></li>
+                <li><a [routerLink]="['/userCancellationsPage']">Cancellations</a></li>
+				<li><a [routerLink]="['/homePage']">Logout</a></li>
+            </ul>
+        </div>
+      </nav>
+</header>
+
+
+<table class="styled-table">
+        <tr>
+            <th>Flight No</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Dept. Date</th>
+            <th>Dept. Time</th>
+            <th>Arrival Time</th>
+            <th>Available Seats</th>
+            <th>Status</th>
+        </tr>
+        <tr>
+            <td>1010</td>
+            <td>Mumbai</td>
+            <td>Pune</td>
+            <td>01/04/2021</td>
+            <td>09:30</td>
+            <td>13:10</td>
+            <td>50</td>
+            <td><button type="button">Book</button></td>
+            
+        </tr>
+        <tr>
+          <td>1011</td>
+          <td>Banglore</td>
+          <td>Goa</td>
+          <td>18/10/2021</td>
+          <td>17:30</td>
+          <td>18:40</td>
+          <td>20</td>
+          <td><button type="button">Book</button></td>
+      </tr>
+        <!-- and so on... -->
+  </table>

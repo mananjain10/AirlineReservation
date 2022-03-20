@@ -1,0 +1,107 @@
+<header>
+  <nav>
+    <div class="row">
+      <img src="/assets/img/1logo-white.png" alt="omnifood logo" class="logo">
+      <ul class="main-nav">
+        <li><a [routerLink]="['/homePage']">Home</a></li>
+        <li><a [routerLink]="['/aboutUsPage']">About Us</a></li>
+        <li><a [routerLink]="['/searchFlightsPage']">Flights</a></li>
+        <li><a [routerLink]="['/registerPage']">Register</a></li>
+        <li><a [routerLink]="['/loginPage']">Login</a></li>
+        <li><a [routerLink]="['/contactUsPage']">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<br>
+<br>
+<br>
+<h2>Registration Form</h2>
+<br>
+<br>
+
+<div class="bg-img">
+  <form #regform="ngForm" (ngSubmit)="checkRegister(regform)">
+    <div class="container">
+      <p>Please fill form for account creation.</p>
+      <hr>
+
+      <label for="title"><b>Title</b></label>
+      <select #title='ngModel' name="title" id="title" required [(ngModel)]="user.title">
+        <option selected>Mr</option>
+        <option>Mrs</option>
+        <option>Miss</option>
+        <option>Master</option>
+      </select>
+      <div *ngIf="title.invalid && (title.dirty||title.touched)" style="color: red;">
+        <div *ngIf="firstName.errors.required">FirstName is required</div>
+      </div>
+
+      <label for="firstName"><b>First Name</b></label>
+      <input type="text" #firstName='ngModel' minlength="3" placeholder="Enter First Name" pattern="[a-zA-Z][a-zA-Z ]+"
+        name="firstName" id="firstName" required [(ngModel)]="user.firstName"><br>
+      <div *ngIf="firstName.invalid && (firstName.dirty||firstName.touched)" style="color: red;">
+        <div *ngIf="firstName.errors.required">FirstName is required</div>
+        <div *ngIf="firstName.errors.minlength">FirstName must have atleast 3 char</div>
+        <div *ngIf="firstName.errors.pattern">No special characters allowed</div>
+      </div>
+
+      <label for="lastName"><b>Last Name</b></label>
+      <input type="text" #lastName='ngModel' minlength="3" placeholder="Enter Last Name" pattern="[a-zA-Z][a-zA-Z ]+"
+        name="lastName" id="lastName" required [(ngModel)]="user.lastName"><br>
+      <div *ngIf="lastName.invalid && (lastName.dirty||lastName.touched)" style="color: red;">
+        <div *ngIf="lastName.errors.required">LastName is required</div>
+        <div *ngIf="lastName.errors.minlength">LastName must have atleast 3 char</div>
+        <div *ngIf="lastName.errors.pattern">No special characters allowed</div>
+      </div>
+
+      <label for="email"><b>Email</b></label>
+      <input id="email" type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9-]+\.[a-z]{2,4}$"
+        [(ngModel)]="user.email" placeholder="Eg. example@email.com" #email='ngModel' required>
+      <div *ngIf="(email.dirty||email.touched) && email.invalid" style="color: red;border-color: red;">
+        <div *ngIf="email.errors.required"> Email is Required</div>
+        <div *ngIf="email.errors.pattern">Invalid Email</div>
+      </div>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" #pwd='ngModel'
+        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" placeholder="Enter Password"
+        name="psw" id="psw" required [(ngModel)]="user.password"><br>
+      <div *ngIf="pwd.invalid && (pwd.dirty||pwd.touched)" style="color: red;">
+        <span style="color: blue">
+          <ul>
+            <li>Minimum 8 characters in password</li>
+            <li>Atleast 1 capital letter</li>
+            <li>Atleast 1 number</li>
+            <li>Atleast 1 special symbol like @</li>
+          </ul>
+        </span>
+        <div *ngIf="pwd.errors.required">password is required</div>
+        <div *ngIf="pwd.errors.pattern">password is invalid</div>
+
+      </div>
+
+
+      <label for="dob"><b>Date of Birth</b></label>
+      <input type="date" placeholder="Enter Date of Birth" name="dob" #dob='ngModel' id="dob" [max]="maxDate" required
+        [(ngModel)]="user.dob">
+      <div *ngIf="dob.invalid && (dob.dirty||dob.touched)" style="color: red;">
+        <div *ngIf="dob.errors.required">DOB is required</div>
+        <div *ngIf="dob.errors.pattern">DOB is invalid</div>
+      </div>
+
+      <label for="phoneNo"><b>Phone No</b></label><br>
+      <input type="tel" #phoneNo='ngModel' pattern="^[6-9]\d{9}$" placeholder="Enter Mobile Number" name="phoneNo"
+        id="phoneNo" required [(ngModel)]="user.phoneNo"><br>
+      <div *ngIf="phoneNo.invalid && (phoneNo.dirty||phoneNo.touched)" style="color: red;">
+        <div *ngIf="phoneNo.errors.required">Mobile no is required</div>
+        <div *ngIf="phoneNo.errors.pattern">Mobile no is invalid</div>
+      </div>
+
+      <div class="clearfix">
+        <button type="submit">Register</button>
+        <a [routerLink]="['/homePage']"><button type="button" style="background-color: red;">Cancel</button></a>
+      </div>
+    </div>
+  </form>
+</div>

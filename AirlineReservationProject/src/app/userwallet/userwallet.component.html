@@ -1,0 +1,96 @@
+<header>
+    <nav>
+        <div class="row">
+            <img src="/assets/img/1logo-white.png" alt="omnifood logo" class="logo">
+            <ul class="main-nav">
+				        <li><a [routerLink]="['/userDashboardPage']">Dashboard</a></li>
+                <li><a [routerLink]="['/userProfilePage']">Profile</a></li>
+                <li><a [routerLink]="['/userSearchFlightsPage']">Flights</a></li>
+                <li><a [routerLink]="['/userBookingsPage']">Bookings</a></li>
+                <li><a [routerLink]="['/userCancellationsPage']">Cancellations</a></li>
+				        <li><a [routerLink]="['/userWalletPage']">Wallet</a></li>
+                        <li><a [routerLink]="['/homePage']" href="javascript:void(0);" (click)="logout()">Logout</a></li>
+            </ul>
+        </div>
+      </nav>
+</header>
+<br>  
+<br>
+<br>
+
+<h2>Wallet Details..</h2>
+<br>
+<br>
+<div>
+    <div>
+        <h3>Available Balance: {{user.wallet}} </h3>
+    </div>
+    <br>
+    <br>
+    <br>
+    <form #walletForm="ngForm" (ngSubmit)="rechargeWallet(walletForm)">
+
+
+        <label for="fname">Accepted Cards</label>
+        <div class="icon-container">
+          <i class="fa fa-cc-visa" style="color:navy;"></i>
+          <i class="fa fa-cc-amex" style="color:blue;"></i>
+          <i class="fa fa-cc-mastercard" style="color:red;"></i>
+          <i class="fa fa-cc-discover" style="color:orange;"></i>
+        </div>
+        
+      <div>
+        <label for="cname">Name on Card</label>
+        <input type="text" id="cname" name="cardname" #cname="ngModel" pattern="[a-zA-Z][a-zA-Z ]+" [(ngModel)]="wallet.wname"required >
+        <div *ngIf="cname.invalid && (cname.dirty||cname.touched)" style="color: red;">
+          <div *ngIf="cname.errors.required">Required</div>
+          <div *ngIf="cname.errors.pattern">Name can have only alphabets</div>
+        </div>
+      </div>
+      <div>
+        <label for="ccnum">Card number</label>
+        <input type="text" id="ccnum" name="cardnumber" #cardno1="ngModel" 
+                 minlength="16" maxlength="16" [(ngModel)]="wallet.number" required>
+        <span *ngIf="cardno1.invalid && (cardno1.dirty||cardno1.touched)" style="color: red;">
+          <span *ngIf="cardno1.errors.required">Required</span>
+          <span *ngIf="cardno1.errors.minlength">Min 16 numbers</span>
+          </span>
+      </div>
+      <div>
+        <label for="expmonth">Exp Month and Exp Year</label>
+        <input type="month" id="expmonth" name="expmonth" [(ngModel)]="wallet.expmonth" required #exp1="ngModel" >
+        <span *ngIf="exp1.invalid && (exp1.dirty||exp1.touched)" style="color: red;">
+          <span *ngIf="exp1.errors.required">Required</span>
+        </span>
+      </div>
+      <div>
+        <label for="cvv">CVV</label>
+        <input type="password" id="cvv" name="cvv" #wp2="ngModel" [(ngModel)]="wallet.pin" minlength="3" maxlength="3" required>
+        <span *ngIf="wp2.invalid && (wp2.dirty||wp2.touched)" style="color: red;">
+          <span *ngIf="wp2.errors.required">Required</span>
+          <span *ngIf="wp2.errors.minlength">max 3 values</span>
+        </span>
+      </div>
+                    
+        
+        <div >
+            
+                                       
+        
+
+        <div >
+            
+                <label for="wallet">Amount to be added in wallet</label><br>
+               <input type="number" id="wallet" name="wallet" #wallet='ngModel' placeholder="Amount to be recharged" [(ngModel)]="user.wallet" required><br>
+                <div *ngIf="(wallet.dirty||wallet.touched) && wallet.invalid" style="color: red;border-color: red;">
+                    <div *ngIf="wallet.errors.required"> Amount has to be entered</div>
+                </div>      
+                                    
+        </div>
+        <div style="text-align: center;">
+            
+                <button type="submit" style="width: 150px; height: 70px;">Recharge Wallet</button>
+                                    
+        </div>
+
+</div>

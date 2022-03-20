@@ -1,0 +1,128 @@
+<header>
+    <nav>
+        <div class="row">
+            <img src="/assets/img/1logo-white.png" alt="omnifood logo" class="logo">
+            <ul class="main-nav">
+				        <li><a [routerLink]="['/userDashboardPage']">Dashboard</a></li>
+                <li><a [routerLink]="['/userProfilePage']">Profile</a></li>
+                <li><a [routerLink]="['/userSearchFlightsPage']">Flights</a></li>
+                <li><a [routerLink]="['/userBookingsPage']">Bookings</a></li>
+                <li><a [routerLink]="['/userCancellationsPage']">Cancellations</a></li>
+				        <li><a [routerLink]="['/userWalletPage']">Wallet</a></li>
+                        <li><a [routerLink]="['/homePage']" href="javascript:void(0);" (click)="logout()">Logout</a></li>
+            </ul>
+        </div>
+      </nav>
+</header>
+
+<br>
+<br>
+<br>
+<br>
+
+<h2>Passengers Details</h2>
+
+<form #passForm=ngForm (ngSubmit)="onSubmit(passForm)">
+    <div class="container">
+        <div class="form-row" *ngFor="let obj of dataArray; let i=index">
+            <div class="form-group col-md-4">
+                <label>Passenger First Name</label>
+                <input type="text" class="form-control" name="firstName{{i}}" #fn="ngModel" minlength="3" required [(ngModel)]="obj.firstName">
+                <!-- {{i}}
+                {{obj.firstName}} -->
+                <div *ngIf="fn.invalid && (fn.dirty||fn.touched)" style="color: red;">
+                    <div *ngIf="fn.errors.required">FirstName is required</div>
+                    <div *ngIf="fn.errors.minlength">FirstName must have atleast 3 char</div>
+                  </div>
+            </div>
+            <div class="form-group col-md-4">
+                <label>Passenger Last Name</label>
+                <input type="text" class="form-control" name="lastName{{i}}" #ln="ngModel" minlength="3" required [(ngModel)]="obj.lastName">
+                <div *ngIf="ln.invalid && (ln.dirty||ln.touched)" style="color: red;">
+                    <div *ngIf="ln.errors.required">lastName is required</div>
+                    <div *ngIf="ln.errors.minlength">lastName must have atleast 3 char</div>
+                  </div>
+            </div>
+            <div class="form-group col-md-4">
+                <label>Passenger Age</label>
+                <input type="number" class="form-control" name="age{{i}}" required #age="ngModel" [(ngModel)]="obj.age">
+                <div *ngIf="age.invalid && (age.dirty|| age.touched)" style="color: red;">
+                    <div *ngIf="age.errors.required">Age is required</div>
+                    
+                  </div>
+            </div>
+            <div class="form-group col-md-4">
+                <label>Passenger Gender</label>
+                <select id="gender" name="gender" class="form-control" name="gender{{i}}" #gender="ngModel" [(ngModel)]="obj.gender" required> 
+                    <option value="male" name="male">Male</option>
+                    <option value="female" name="female">Female</option>
+                  </select>
+                  <div *ngIf="gender.invalid && (gender.dirty|| gender.touched)" style="color: red;">
+                    <div *ngIf="gender.errors.required">Gender is required</div>
+                  </div>
+            </div>
+
+            <div class="form-group col-md-4">
+                <label>Adult/Child</label>
+                <select id="adch" name="adch" class="form-control" name="adultOrChild{{i}}" #ac="ngModel" [(ngModel)]="obj.adultOrChild" required>
+                    <option value="adult">Adult</option>
+                    <option value="child">Child</option>
+                  </select>
+                  <div *ngIf="ac.invalid && (ac.dirty||ac.touched)" style="color: red;">
+                    <div *ngIf="ac.errors.required">Select Adult if Adult else select child</div>
+                  </div>
+            </div>
+            <div class="form-group col-md-4" *ngIf="i!=0">
+                <span (click)="removeForm(i)" class="btn btn-danger" style="float: inline-start;color: red;text-decoration: seashell;">Delete Passenger Details</span>
+            </div>
+            <br>
+            <br>
+            <span (click)="addForm()" class="btn btn-success" style="float: right;color: royalblue;text-decoration: seashell;">Add Passenger</span>
+            <br>
+            <button class="btn btn-primary">Submit Details</button>
+        </div>
+    </div>
+</form>
+
+<!-- <form (ngSubmit)="onSubmit()">
+    <div class="container">
+        <div class="form-row" *ngFor="let obj of dataArray; let i=index">
+            <div class="form-group col-md-4">
+                <label>Passenger First Name</label>
+                <input type="text" class="form-control" name="firstName{{i}}" [(ngModel)]="obj.firstName">
+                {{i}}
+                {{obj.firstName}}
+            </div>
+            <div class="form-group col-md-4">
+                <label>Passenger Last Name</label>
+                <input type="text" class="form-control" name="lastName{{i}}" [(ngModel)]="obj.lastName">
+            </div>
+            <div class="form-group col-md-4">
+                <label>Passenger Age</label>
+                <input type="text" class="form-control" name="age{{i}}" [(ngModel)]="obj.age">
+            </div>
+            <div class="form-group col-md-4">
+                <label>Passenger Gender</label>
+                <select id="gender" name="gender" class="form-control" name="gender{{i}}" [(ngModel)]="obj.gender"> 
+                    <option value="male" name="male">Male</option>
+                    <option value="female" name="female">Female</option>
+                  </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label>Adult/Child</label>
+                <select id="adch" name="adch" class="form-control" name="adultOrChild{{i}}" [(ngModel)]="obj.adultOrChild">
+                    <option value="adult">Adult</option>
+                    <option value="child">Child</option>
+                  </select>
+            </div>
+            <div class="form-group col-md-4" *ngIf="i!=0">
+                <span (click)="removeForm(i)" class="btn btn-danger" style="float: inline-start;color: red;text-decoration: seashell;">Delete Passenger Details</span>
+            </div>
+            <br>
+            <br>
+            <span (click)="addForm()" class="btn btn-success" style="float: right;color: royalblue;text-decoration: seashell;">Add Passenger</span>
+            <br>
+            <button class="btn btn-primary">Submit Details</button>
+        </div>
+    </div>
+</form> -->

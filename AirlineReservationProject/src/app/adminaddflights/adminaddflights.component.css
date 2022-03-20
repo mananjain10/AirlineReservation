@@ -1,0 +1,78 @@
+* {
+	margin: 0px; 
+	padding: 0px; 
+	box-sizing: border-box;
+}
+
+body, html {
+	height: 100%;
+	font-family: Poppins-Regular, sans-serif;
+}
+
+body {
+	margin:  0;
+}
+
+header {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0))), url("/assets/img/jerry-zhang-BvuZn3FhEdU-unsplash.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("/assets/img/jerry-zhang-BvuZn3FhEdU-unsplash.jpg");
+    background-size: cover; 
+    background-position: center;
+    height: 20vh;
+    background-attachment: fixed;
+    }
+       
+  .hero-text-box {
+    position: absolute;
+    width: 1140px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+  }
+  
+  .logo {
+    height: 100px;
+    width: auto;
+    float: left;
+    margin-top: 20px;
+  }
+  
+  .main-nav {
+    float: right;
+    list-style: none;
+    margin-top: 55px;
+  }
+  
+  .main-nav li {
+    display: inline-block;
+    margin-left: 40px;
+  }
+  
+  .main-nav li a:link,
+  .main-nav li a:visited {
+    padding: 8px 0;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.2s;
+    transition: border-bottom 0.2s;
+  }
+  
+  .main-nav li a:hover,
+  .main-nav li a:active {
+    border-bottom: 2px solid #e67e22;
+  }
+  
+  form { 
+    margin: 0 auto; 
+    width:400px;
+    }
+  
+  /* features */
+  
+  .section-features .long-copy {
+    margin-bottom: 30px;
+  }

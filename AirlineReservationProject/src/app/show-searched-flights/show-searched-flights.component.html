@@ -1,0 +1,45 @@
+<nav>
+    <div class="row">
+        <img src="/assets/img/1logo-white.png" alt="omnifood logo" class="logo">
+        <ul class="main-nav">
+            <li><a [routerLink]="['/aboutUsPage']">About Us</a></li>
+            <li><a [routerLink]="['/contactUsPage']">Contact Us</a></li>
+        </ul>
+    </div>
+  </nav>
+<section class="section-form">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="row">
+                <div class="main">
+                    <div class="card">
+                        <h2 style="text-align: center;">Available Flights</h2>
+                            <table border="1">
+                                <th>Flight Number</th>
+                                <th>Source</th>
+                                <th>Destination</th>
+                                <th>Departure Time</th>
+                                <th>Arrival Time</th>
+                                <th>Ticket Price</th>
+                                <th>Action</th>
+                                
+                                <tr *ngFor="let flight of flights">
+                                    <td>{{flight.flight_no}}</td>
+                                    <td>{{flight.fromCity}}</td>
+                                    <td>{{flight.toCity}}</td>
+                                    <td>{{flight.depTime}}</td>
+                                    <td>{{flight.arrTime}}</td>
+                                    <td>{{flight.ticketPrice}}</td>
+                                    
+                                    <td>
+                                        <button type="button" (click)="bookFlight(flight.flight_no)">Book</button>
+                                    </td>
+                                </tr>
+                                
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

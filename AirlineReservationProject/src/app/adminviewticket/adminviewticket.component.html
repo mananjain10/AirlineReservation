@@ -1,0 +1,98 @@
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+</head>
+
+<header>
+    <nav>
+        <div class="row">
+            <a [routerLink]="['/adminDashboardPage']"><img src="/assets/img/admin.JPG" alt="Admin Logo" class="logo"></a>
+            <ul class="main-nav">
+                <li><a [routerLink]="['/addFlightsPage']">Add Flights</a></li>
+                <li><a [routerLink]="['/updateFlightsPage']">Update Flights</a></li>
+                <li><a [routerLink]="['/viewAllFlightsPage']">View All Flights</a></li>
+                <li><a [routerLink]="['/adminViewBookingPage']">Bookings</a></li>
+                <li><a [routerLink]="['/viewAllUsersPage']">Users</a></li>
+                <li><a [routerLink]="['/homePage']">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<br>
+<br>
+<br>
+    
+    
+    
+<div id="table">
+
+    <br>
+    <br>
+    <br>
+    <h3>Booking ID: {{bookService.bookingIdForViewTicketData}}</h3>
+    <br>
+
+    <h3 style="text-decoration: underline;">Your Flight Details are here:  </h3>
+    <br>
+    <h3>Flight ID: {{flight.flight_no}}</h3>
+    <h3>Source: {{flight.fromCity}}</h3>
+    <h3>Destination: {{flight.toCity}}</h3>
+    <h3>Departure Time: {{flight.depTime}}</h3>
+    <h3>Arrival Time: {{flight.arrTime}}</h3>
+    <br>
+    <br>
+    <h2>You can View your details here:</h2>
+
+<table style="table-layout:fixed;width:100%;font-size: medium;" >
+    <tr class="head">
+        <th>Dept. Date</th>
+        <th>Dept. Time</th>
+        <th>Seat Number</th>
+        <th>Ticket Price</th>
+    </tr>
+    <tr *ngFor="let ticket of tickets">
+        
+        
+        <td>{{ticket.travelDate}}</td>
+        <td>{{flight.depTime}}</td>
+        <td>{{ticket.seatNo}}</td>
+        <td>{{flight.ticketPrice}}</td>
+          
+       
+    </tr>
+    
+</table>
+<br>
+<br>
+<br>
+<table style="table-layout:fixed;width:100%;font-size: medium;" >
+    <tr class="head">
+        
+        <th>Passenger First Name</th>
+        <th>Passenger Last Name</th>
+        <th>Passenger Age</th>
+        <th>Passenger Gender</th>
+        <th>Adult/Child</th>
+    </tr>
+    <tr *ngFor="let passenger of passengers">
+        
+        
+        
+        <td>{{passenger.firstName}}</td>
+        <td>{{passenger.lastName}}</td>
+        <td>{{passenger.age}}</td>
+        <td>{{passenger.gender}}</td>
+        <td>{{passenger.adultOrChild}}</td>
+        
+          
+       
+    </tr>
+    
+</table>
+</div>
+

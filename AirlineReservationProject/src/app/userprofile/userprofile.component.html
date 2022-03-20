@@ -1,0 +1,114 @@
+<header>
+  <nav>
+      <div class="row">
+          <img src="/assets/img/1logo-white.png" alt="omnifood logo" class="logo">
+          <ul class="main-nav">
+              <li><a [routerLink]="['/userDashboardPage']">Dashboard</a></li>
+              <li><a [routerLink]="['/userProfilePage']">Profile</a></li>
+              <li><a [routerLink]="['/userSearchFlightsPage']">Flights</a></li>
+              <li><a [routerLink]="['/userBookingsPage']">Bookings</a></li>
+              <li><a [routerLink]="['/userCancellationsPage']">Cancellations</a></li>
+              <li><a [routerLink]="['/userWalletPage']">Wallet</a></li>
+              <li><a [routerLink]="['/homePage']" href="javascript:void(0);" (click)="logout()">Logout</a></li>
+          </ul>
+      </div>
+    </nav>
+</header>
+
+
+<br>
+<br>
+
+<h2>Update {{user.firstName}} Profile</h2>
+<br>
+<br>
+
+<div  class="bg-img">
+	<form #userForm1="ngForm" (ngSubmit)="updateUser(userForm1)">
+		<div class="container">	
+		
+		<label for="title"><b>Title</b></label><br>
+      <select #title='ngModel' name="title" id="title" required [(ngModel)]="user.title">
+        	<option selected>Mr</option>
+        	<option>Mrs</option>
+        	<option>Miss</option>
+        	<option>Master</option>
+    	</select>
+          <div *ngIf="title.invalid && (title.dirty||title.touched)" style="color: red;">
+            <div *ngIf="title.errors.required">Title is required</div>
+          </div>
+
+		  <br>
+				
+		  <!-- <label for="user_id"><b>User Id</b></label><br>
+		  <input type="number" placeholder="Enter userId" name="user_id" id="user_id" required #user_id=ngModel [(ngModel)]=user.user_id>
+		  <div *ngIf="user_id.invalid && (user_id.dirty||user_id.touched)" style="color: red;">
+            <div *ngIf="user_id.errors.required">userid is required</div>
+            <div *ngIf="user_id.errors.minlength">userid must have atleast 3 num</div>
+          </div> -->
+
+		  <br>
+
+		  <label for="firstName"><b>First Name</b></label><br>
+      <input type="text" #firstName='ngModel' minlength="3" placeholder="Enter First Name" name="firstName" id="firstName" required [(ngModel)]="user.firstName"><br>
+          <div *ngIf="firstName.invalid && (firstName.dirty||firstName.touched)" style="color: red;">
+            <div *ngIf="firstName.errors.required">FirstName is required</div>
+            <div *ngIf="firstName.errors.minlength">FirstName must have atleast 3 char</div>
+          </div>
+
+		  <br>
+
+      <label for="lastName"><b>Last Name</b></label><br>
+      <input type="text" #lastName='ngModel' minlength="3" placeholder="Enter Last Name" name="lastName" id="lastName" required [(ngModel)]="user.lastName"><br>
+          <div *ngIf="lastName.invalid && (lastName.dirty||lastName.touched)" style="color: red;">
+            <div *ngIf="lastName.errors.required">LastName is required</div>
+            <div *ngIf="lastName.errors.minlength">LastName must have atleast 3 char</div>
+          </div>
+
+		  <br>
+
+      <label for="email"><b>Email</b></label><br>
+      <input id="email" type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9-]+\.[a-z]{2,4}$" [(ngModel)]="user.email" placeholder="Eg. example@email.com" #email='ngModel' required>
+		    <div *ngIf="(email.dirty||email.touched) && email.invalid" style="color: red;border-color: red;">
+			    <div *ngIf="email.errors.required"> Email is Required</div>
+				<div *ngIf="email.errors.pattern">Invalid Email</div>
+			</div>
+
+			<br>
+
+      <!-- <label for="psw"><b>Password</b></label><br>
+      <input type="password" #pwd='ngModel' pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" placeholder="Enter Password" name="psw" id="psw" required [(ngModel)]="user.password"><br>
+          <div *ngIf="pwd.invalid && (pwd.dirty||pwd.touched)" style="color: red;">
+            <div *ngIf="pwd.errors.required">password is required</div>
+            <div *ngIf="pwd.errors.pattern">password is invalid</div>
+          </div>
+
+		  <br> -->
+
+
+      <label for="dob"><b>Date of Birth</b></label><br>
+      <input type="date" placeholder="Enter Date of Birth" name="dob" #dob='ngModel' id="dob" required [(ngModel)]="user.dob">
+      <div *ngIf="dob.invalid && (dob.dirty||dob.touched)" style="color: red;">
+        <div *ngIf="dob.errors.required">DOB is required</div>
+        <div *ngIf="dob.errors.pattern">DOB is invalid</div>
+      </div>
+
+	  <br>
+
+      <label for="phoneNo"><b>Phone No</b></label><br>
+      <input type="tel" #phoneNo='ngModel' pattern="^[6-9]\d{9}$" placeholder="Enter Mobile Number" name="phoneNo" id="phoneNo" required [(ngModel)]="user.phoneNo"><br>
+          <div *ngIf="phoneNo.invalid && (phoneNo.dirty||phoneNo.touched)" style="color: red;">
+            <div *ngIf="phoneNo.errors.required">Mobile no is required</div>
+            <div *ngIf="phoneNo.errors.pattern">Mobile no is invalid</div>
+          </div>
+
+		  <br>
+				
+		  <div class="clearfix">
+			<a [routerLink]="['/userDashboardPage']"><button type="button"  style="background-color: red;">Cancel</button></a>
+			<button type="submit">Update Profile</button>
+		</div>
+
+		</div>
+	</form>
+	</div>

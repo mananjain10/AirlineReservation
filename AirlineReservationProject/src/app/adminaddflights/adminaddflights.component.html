@@ -1,0 +1,78 @@
+<header>
+    <nav>
+        <div class="row">
+            <a [routerLink]="['/adminDashboardPage']"><img src="/assets/img/admin.JPG" alt="Admin Logo" class="logo"></a>
+            <ul class="main-nav">
+                <li><a [routerLink]="['/addFlightsPage']">Add Flights</a></li>
+                <li><a [routerLink]="['/updateFlightsPage']">Update Flights</a></li>
+                <li><a [routerLink]="['/viewAllFlightsPage']">View All Flights</a></li>
+                <li><a [routerLink]="['/adminViewBookingPage']">Bookings</a></li>
+                <li><a [routerLink]="['/viewAllUsersPage']">Users</a></li>
+                <li><a [routerLink]="['/homePage']">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<br>
+<br>
+<br>
+
+<section class="section-form">
+    <div>
+        <div class="main">
+            <div class="card">
+            <h2 style="text-align: center;">Add Flight Details to be added..</h2>
+            <form #flightForm="ngForm" (ngSubmit)="addFlight()">
+                <div class="container">
+
+                <br>
+                <label for="flightName"><b>Flight Name</b></label><br>
+                <input type="text" placeholder="Enter flight name" minlength="3" pattern="[a-zA-Z][a-zA-Z ]+" required name="flightName" id="flightName" #flightName=ngModel [(ngModel)]=flight.flightName><br>
+                <div *ngIf="flightName.invalid && (flightName.dirty||flightName.touched)" style="color: red;">
+                    <div *ngIf="flightName.errors.required">FirstName is required</div>
+                    <div *ngIf="flightName.errors.minlength">FirstName must have atleast 3 char</div>
+                    <div *ngIf="flightName.errors.pattern">No special characters allowed</div>
+                  </div>
+
+                <br>
+                <label for="fromCity"><b>Source</b></label><br>
+                <input type="text" placeholder="Enter from place" minlength="3" pattern="[a-zA-Z][a-zA-Z ]+" required name="fromCity" id="fromCity" #fromCity=ngModel [(ngModel)]=flight.fromCity><br>
+                <div *ngIf="fromCity.invalid && (fromCity.dirty||fromCity.touched)" style="color: red;">
+                    <div *ngIf="fromCity.errors.required">FirstName is required</div>
+                    <div *ngIf="fromCity.errors.minlength">FirstName must have atleast 3 char</div>
+                    <div *ngIf="fromCity.errors.pattern">No special characters allowed</div>
+                  </div>
+            
+                <br>
+                <label for="toCity"><b>Destination</b></label><br>
+                <input type="text" placeholder="Enter to place" minlength="3" pattern="[a-zA-Z][a-zA-Z ]+" required name="toCity" id="toCity" #toCity=ngModel [(ngModel)]=flight.toCity><br>
+                <div *ngIf="toCity.invalid && (toCity.dirty||toCity.touched)" style="color: red;">
+                    <div *ngIf="toCity.errors.required">FirstName is required</div>
+                    <div *ngIf="toCity.errors.minlength">FirstName must have atleast 3 char</div>
+                    <div *ngIf="toCity.errors.pattern">No special characters allowed</div>
+                  </div>
+            
+                <br>
+                <label for="depTime"><b>Departure Time</b></label><br>
+                <input type="time" placeholder="Enter Dept Time" name="depTime" id="depTime" #depTime=ngModel [(ngModel)]=flight.depTime><br>
+            
+                <br>
+                <label for="arrTime"><b>Arrival Time</b></label><br>
+                <input type="time" placeholder="Enter Arrival Time" name="arrTime" id="arrTime" #arrTime=ngModel [(ngModel)]=flight.arrTime><br>
+
+                <br>
+                <label for="ticketPrice"><b>Ticket Price</b></label><br>
+                <input type="number" placeholder="Enter Ticket Price" name="ticketPrice" id="ticketPrice" #ticketPrice=ngModel [(ngModel)]=flight.ticketPrice><br>
+
+                <br>
+                <label for="capacity"><b>Capacity</b></label><br>
+                <input type="number" placeholder="Enter Total Capacity" name="capacity" id="capacity" #capacity=ngModel [(ngModel)]=flight.capacity><br>
+
+                <br>
+                <button type="submit" style="width: 200px; height: 50px;">Add Flight</button>
+                </div>
+            </form>
+        </div>
+    </div> 
+    </div>
+    </section>   

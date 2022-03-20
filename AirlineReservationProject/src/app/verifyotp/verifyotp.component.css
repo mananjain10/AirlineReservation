@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    font-family: sans-serif;
+  }
+  header {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7)));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+  }
+  
+  
+ 
+  
+  .box {
+    position: fixed;
+    transform: translate(180%, -110%);
+    width: 30%;
+    padding: 2.5rem;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 0.625rem;
+    
+  }
+  
+  .box h2 {
+    margin: 0 0 1.875rem;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    font-family: monospace;
+    font-size: 100%;
+  }
+  
+  .box .inputBox {
+    position: relative;
+  }
+  
+  .box .inputBox input {
+    width: 100%;
+    padding: 9px 0;
+    font-size: 1rem;
+    color: #fff;
+    letter-spacing: 0.062rem;
+    margin-bottom: 1.875rem;
+    border: none;
+    border-bottom: 0.065rem solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  
+  .box .inputBox label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.625rem 0;
+    font-size: 1rem;
+    color: #fff;
+    pointer-events: none;
+    /* transition: 0.5s; */
+  } 
+  
+  
+  .box .inputBox input:focus ~ label,
+  .box .inputBox input:valid ~ label,
+  .box .inputBox input:not([value=""]) ~ label {
+    top: -1.125rem;
+    left: 0;
+    color: darkorange;
+    font-size: 0.75rem;
+  }
+  
+  .box input[type="submit"] {
+    border: none;
+    outline: none;
+    color: #fff;
+    background-color:darkorange;
+    padding: 0.625rem 1.25rem;
+    cursor: pointer;
+    border-radius: 0.312rem;
+    font-size: 1rem;
+    display: inline-block;
+  
+  }
+  
+  .box input[type="submit"]:hover {
+    background-color:black;
+  }
+  div.psw {
+    
+    font-size: 80%;
+    position: absolute;
+    padding-top: 10px;
+  
+  }  
